@@ -1,0 +1,87 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+// Base class Person representing common attributes for students and professors
+class Person {
+protected:
+    std::string name;
+    int age;
+
+public:
+    Person(const std::string& n, int a) : name(n), age(a) {}
+
+    virtual void displayInfo() const {
+        std::cout << "Name: " << name << ", Age: " << age;
+    }
+
+    virtual ~Person() {}
+};
+
+// Derived class Student from Person
+class Student : public Person {
+private:
+    int studentID;
+
+public:
+    Student(const std::string& n, int a, int id) : Person(n, a), studentID(id) {}
+
+    void displayInfo() const override {
+        Person::displayInfo();
+        std::cout << ", Student ID: " << studentID << std::endl;
+    }
+};
+
+// Derived class Professor from Person
+class Professor : public Person {
+private:
+    std::string department;
+
+public:
+    Professor(const std::string& n, int a, const std::string& dep) : Person(n, a), department(dep) {}
+
+    void displayInfo() const override {
+        Person::displayInfo();
+        std::cout << ", Department: " << department << std::endl;
+    }
+};
+
+// Course class representing university courses
+class Course {
+private:
+    std::string courseName;
+    int courseID;
+    Professor* instructor;
+    std::vector<Student*> enrolledStudents;
+
+public:
+    Course(const std::string& name, int id, Professor* prof) : courseName(name), courseID(id), instructor(prof) {}
+
+    void enrollStudent(Student* student) {
+        enrolledStudents.push_back(student);
+    }
+
+    void displayInfo() const {
+        std::cout << "Course: " << courseName << ", ID: " << courseID << std::endl;
+        std::cout << "Instructor: ";
+        instructor->displayInfo();
+        std::cout << "Enrolled Students:\n";
+        for (const auto& student : enrolledStudents) {
+            student->displayInfo();
+        }
+    }
+};
+
+int main() {
+    // Demonstrate the use of the class hierarchy
+    Student student("John Doe", 20, 12345);
+    Professor professor("Dr. Smith", 40, "Computer Science");
+    Course course("C++ Programming", 101, &professor);
+
+    course.enrollStudent(&student);
+
+    // Display information about the course
+    course.displayInfo();
+
+    return 0;
+}
