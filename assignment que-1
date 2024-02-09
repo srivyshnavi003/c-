@@ -1,0 +1,66 @@
+1.UML Notation:
+a) Employee
+
+---------------------
+|      Employee      |
+---------------------
+| - employeeID: int   |
+| - name: string      |
+| - position: string  |
+| + getDetails(): void|
+---------------------
+
+b) Teacher
+
+---------------------
+|      Teacher       |
+---------------------
+| - teacherID: int    |
+| - name: string      |
+| - subject: string   |
+| + teach(): void     |
+---------------------
+
+c) Car
+
+---------------------
+|        Car         |
+---------------------
+| - model: string    |
+| - make: string     |
+| - year: int        |
+| + startEngine(): void|
+---------------------
+
+JSON Notation:
+a) Employee
+
+{
+  "Employee": {
+    "employeeID": 1,
+    "name": "John Doe",
+    "position": "Software Engineer"
+  }
+}
+
+
+b) Teacher
+
+{
+  "Teacher": {
+    "teacherID": 101,
+    "name": "Mrs. Smith",
+    "subject": "Mathematics"
+  }
+}
+
+c) Car
+
+{
+  "Car": {
+    "model": "Toyota Camry",
+    "make": "Toyota",
+    "year": 2022
+  }
+}
+
