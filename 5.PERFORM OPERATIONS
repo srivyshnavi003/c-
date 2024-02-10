@@ -1,0 +1,35 @@
+#include <iostream>
+
+int main() {
+    // Declare variables to store the two floating-point numbers
+    double num1, num2;
+
+    // Read in two floating-point numbers
+    std::cout << "Enter the first floating-point number: ";
+    std::cin >> num1;
+
+    std::cout << "Enter the second floating-point number: ";
+    std::cin >> num2;
+
+    // Perform operations
+    double sum = num1 + num2;
+    double difference = num1 - num2;
+    double product = num1 * num2;
+
+    // Check for division by zero before performing division
+    if (num2 != 0) {
+        double quotient = num1 / num2;
+        double remainder = fmod(num1, num2);
+
+        // Display results
+        std::cout << "Sum: " << sum << std::endl;
+        std::cout << "Difference: " << difference << std::endl;
+        std::cout << "Product: " << product << std::endl;
+        std::cout << "Quotient: " << quotient << std::endl;
+        std::cout << "Remainder: " << remainder << std::endl;
+    } else {
+        std::cout << "Error: Cannot perform division by zero." << std::endl;
+    }
+
+    return 0;
+}
