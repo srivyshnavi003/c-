@@ -1,0 +1,31 @@
+#include <iostream>
+
+// Function to find the GCD of two numbers
+int findGCD(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    // Declare variables to store the two numbers
+    int num1, num2;
+
+    // Read in two numbers
+    std::cout << "Enter the first number: ";
+    std::cin >> num1;
+
+    std::cout << "Enter the second number: ";
+    std::cin >> num2;
+
+    // Call the findGCD function to find the GCD
+    int gcd = findGCD(num1, num2);
+
+    // Display the result
+    std::cout << "The GCD of " << num1 << " and " << num2 << " is: " << gcd << std::endl;
+
+    return 0;
+}
