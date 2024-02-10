@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+
+int main() {
+    // Declare a variable to store the floating-point number
+    double floatingNumber;
+
+    // Read in a floating-point number
+    std::cout << "Enter a floating-point number: ";
+    std::cin >> floatingNumber;
+
+    // Round to the nearest integer using floor and ceil functions
+    int roundedFloor = static_cast<int>(floor(floatingNumber));
+    int roundedCeil = static_cast<int>(ceil(floatingNumber));
+
+    // Display the rounded values
+    std::cout << "Original Number: " << floatingNumber << std::endl;
+    std::cout << "Rounded to the nearest integer using floor: " << roundedFloor << std::endl;
+    std::cout << "Rounded to the nearest integer using ceil: " << roundedCeil << std::endl;
+
+    return 0;
+}
