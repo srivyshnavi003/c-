@@ -1,0 +1,27 @@
+#include <iostream>
+
+int main() {
+    // Declare a variable to store the number
+    int number;
+
+    // Read in a number
+    std::cout << "Enter a non-negative integer: ";
+    std::cin >> number;
+
+    // Validate input for a non-negative number
+    if (number < 0) {
+        std::cout << "Invalid input. Please enter a non-negative integer." << std::endl;
+        return 1; // Return an error code
+    }
+
+    // Calculate the factorial using a for loop
+    unsigned long long factorial = 1; // Use 'unsigned long long' to handle large factorials
+    for (int i = 1; i <= number; ++i) {
+        factorial *= i;
+    }
+
+    // Display the factorial
+    std::cout << "The factorial of " << number << " is: " << factorial << std::endl;
+
+    return 0;
+}
