@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+
+// Function to reverse a string
+std::string reverseString(const std::string& str) {
+    std::string reversedStr;
+    
+    for (int i = str.length() - 1; i >= 0; --i) {
+        reversedStr += str[i];
+    }
+
+    return reversedStr;
+}
+
+int main() {
+    // Declare a variable to store the input string
+    std::string inputString;
+
+    // Read in a string
+    std::cout << "Enter a string: ";
+    std::getline(std::cin, inputString);
+
+    // Call the reverseString function to find the reverse
+    std::string reversedString = reverseString(inputString);
+
+    // Display the result
+    std::cout << "Original string: " << inputString << std::endl;
+    std::cout << "Reversed string: " << reversedString << std::endl;
+
+    return 0;
+}
