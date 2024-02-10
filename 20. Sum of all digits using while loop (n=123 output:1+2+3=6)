@@ -1,0 +1,30 @@
+#include <iostream>
+
+int main() {
+    // Declare a variable to store the number
+    int number;
+
+    // Read in a number
+    std::cout << "Enter a positive integer: ";
+    std::cin >> number;
+
+    // Validate input for a positive number
+    if (number < 0) {
+        std::cout << "Invalid input. Please enter a positive integer." << std::endl;
+        return 1; // Return an error code
+    }
+
+    // Calculate the sum of all digits using a while loop
+    int originalNumber = number;
+    int sum = 0;
+
+    while (number > 0) {
+        sum += number % 10;
+        number /= 10;
+    }
+
+    // Display the result
+    std::cout << "The sum of digits in " << originalNumber << " is: " << sum << std::endl;
+
+    return 0;
+}
