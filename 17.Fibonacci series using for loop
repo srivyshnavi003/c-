@@ -1,0 +1,26 @@
+#include <iostream>
+
+int main() {
+    // Declare variables to store the number of terms and the first two terms
+    int numTerms;
+    int term1 = 0, term2 = 1;
+
+    // Read in the number of terms in the Fibonacci series
+    std::cout << "Enter the number of terms in the Fibonacci series: ";
+    std::cin >> numTerms;
+
+    // Display the Fibonacci series using a for loop
+    std::cout << "Fibonacci Series for " << numTerms << " terms:\n";
+
+    for (int i = 0; i < numTerms; ++i) {
+        std::cout << term1 << " ";
+
+        int nextTerm = term1 + term2;
+        term1 = term2;
+        term2 = nextTerm;
+    }
+
+    std::cout << std::endl;
+
+    return 0;
+}
