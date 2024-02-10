@@ -1,0 +1,15 @@
+#include <iostream>
+
+int main() {
+    // Declare a variable to store the integer
+    int number;
+
+    // Read in an integer
+    std::cout << "Enter an integer: ";
+    std::cin >> number;
+
+    // Use the ternary conditional operator to check divisibility by 3
+    std::cout << "The integer is " << (number % 3 == 0 ? "divisible" : "not divisible") << " by 3." << std::endl;
+
+    return 0;
+}
