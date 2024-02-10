@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+int main() {
+    // Declare a variable to store the input string
+    std::string inputString;
+
+    // Read in a string
+    std::cout << "Enter a string: ";
+    std::getline(std::cin, inputString);
+
+    // Remove spaces and convert to lowercase for case-insensitive comparison
+    std::string cleanedString;
+    for (char ch : inputString) {
+        if (!std::isspace(ch)) {
+            cleanedString += std::tolower(ch);
+        }
+    }
+
+    // Use a while loop to check if the cleaned string is a palindrome
+    int left = 0;
+    int right = cleanedString.length() - 1;
+    bool isPalindrome = true;
+
+    while (left < right) {
+        if (cleanedString[left] != cleanedString[right]) {
+            isPalindrome = false;
+            break;
+        }
+        ++left;
+        --right;
+    }
+
+    // Display the result
+    if (isPalindrome) {
+        std::cout << "The entered string is a palindrome." << std::endl;
+    } else {
+        std::cout << "The entered string is not a palindrome." << std::endl;
+    }
+
+    return 0;
+}
