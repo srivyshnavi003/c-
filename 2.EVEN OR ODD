@@ -1,0 +1,19 @@
+#include <iostream>
+
+int main() {
+    // Declare a variable to store the integer
+    int number;
+
+    // Read in an integer
+    std::cout << "Enter an integer: ";
+    std::cin >> number;
+
+    // Check if the integer is odd or even
+    if (number % 2 == 0) {
+        std::cout << number << " is an even number." << std::endl;
+    } else {
+        std::cout << number << " is an odd number." << std::endl;
+    }
+
+    return 0;
+}
