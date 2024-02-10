@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+
+// Function to count the number of elements in a string
+int countElements(const std::string& str) {
+    return str.length();
+}
+
+int main() {
+    // Declare a variable to store the input string
+    std::string inputString;
+
+    // Read in a string
+    std::cout << "Enter a string: ";
+    std::getline(std::cin, inputString);
+
+    // Call the countElements function to find the number of elements
+    int elementsCount = countElements(inputString);
+
+    // Display the result
+    std::cout << "Number of elements in the string: " << elementsCount << std::endl;
+
+    return 0;
+}
